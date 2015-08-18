@@ -4,10 +4,14 @@
     <li>
       <% if task.done %>
         <i class="fa fa-check"></i>
-      <%else %>
+      <%elsif %>
         <i class="fa fa-times"></i>
       <% end %>
       <%=task.name%>
+      <%= link_to "View",task_path(task)%>
+      <%= link_to "Edit",edit_task_path(task)%>
+      <%= link_to "Delete",task_path(task), method: :delete%>
     </li>
   <% end %>
 </ul>
+<%= link_to "Add a new task", new_task_path %>
